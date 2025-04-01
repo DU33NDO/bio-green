@@ -3,14 +3,24 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t, i18n } = useTranslation();
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -37,6 +47,14 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const changeLanguage = (locale: string) => {
+    try {
+      i18n.changeLanguage(locale);
+    } catch (error) {
+      console.error("Error changing language:", error);
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -58,12 +76,37 @@ export default function Header() {
             />
           </Link>
 
-          {/* Contact buttons */}
           <div className="flex items-center gap-3 md:mr-6">
+            <Select onValueChange={changeLanguage} defaultValue={i18n.language}>
+              <SelectTrigger className="w-[80px] bg-green-50">
+                <Globe className="h-4 w-4 mr-2" />
+                <SelectValue placeholder="Lang" />
+              </SelectTrigger>
+              <SelectContent className="bg-white">
+                <SelectItem
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer"
+                  value="ru"
+                >
+                  РУС
+                </SelectItem>
+                <SelectItem
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer"
+                  value="kz"
+                >
+                  ҚАЗ
+                </SelectItem>
+                <SelectItem
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer"
+                  value="en"
+                >
+                  ENG
+                </SelectItem>
+              </SelectContent>
+            </Select>
             <a
               href="tel:+77005677070"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition-colors"
-              aria-label="Позвонить нам"
+              aria-label={t("contact.call")}
             >
               <Phone className="h-5 w-5" />
             </a>
@@ -72,7 +115,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition-colors"
-              aria-label="Написать в WhatsApp"
+              aria-label={t("contact.whatsapp")}
             >
               <MessageCircle className="h-5 w-5" />
             </a>
@@ -112,10 +155,10 @@ export default function Header() {
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex space-x-6">
-            <NavLink href="/">Главная страница</NavLink>
-            <NavLink href="/about">О нас</NavLink>
-            <NavLink href="/service">Наши услуги</NavLink>
-            <NavLink href="/request">Оставить заявку</NavLink>
+            <NavLink href="/">{t("nav.home")}</NavLink>
+            <NavLink href="/about">{t("nav.about")}</NavLink>
+            <NavLink href="/service">{t("nav.services")}</NavLink>
+            <NavLink href="/request">{t("nav.request")}</NavLink>
           </nav>
         </div>
 
@@ -139,23 +182,23 @@ export default function Header() {
         >
           <nav className="flex flex-col space-y-1 py-2">
             <MobileNavLink href="/" onClick={toggleMenu} active={true}>
-              Главная страница
+              {t("nav.home")}
             </MobileNavLink>
             <MobileNavLink href="/about" onClick={toggleMenu}>
-              О нас
+              {t("nav.about")}
             </MobileNavLink>
             <MobileNavLink href="/service" onClick={toggleMenu}>
-              Наши услуги
+              {t("nav.services")}
             </MobileNavLink>
             <MobileNavLink href="/request" onClick={toggleMenu}>
-              Оставить заявку
+              {t("nav.request")}
             </MobileNavLink>
           </nav>
 
           <div className="mt-6 pt-6 border-t border-green-200">
             <Button asChild className="w-full bg-green-600 hover:bg-green-700">
               <Link href="/request" onClick={toggleMenu}>
-                Оставить заявку
+                {t("nav.request")}
               </Link>
             </Button>
           </div>

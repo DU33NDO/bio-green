@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowDown, CheckCircle, Leaf, Recycle, Truck } from "lucide-react";
-
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import TruckSlider from "@/components/truck-slider";
+import "../../i18n";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -11,17 +14,18 @@ interface FeatureCardProps {
 }
 
 export default function WasteRemovalPage() {
+  const { t } = useTranslation();
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-green-50 py-16 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-green-800 mb-6">
-            Вывоз строительного мусора
+            {t("service.title")}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
-            Мы предлагаем экологически безопасные решения для вывоза
-            строительного мусора объемом от 15 кубических метров
+            {t("service.subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
             <Button
@@ -29,7 +33,7 @@ export default function WasteRemovalPage() {
               size="lg"
               className="bg-green-600 hover:bg-green-700 text-white"
             >
-              <Link href="/request">Запрос на вывоз мусора</Link>
+              <Link href="/request">{t("nav.request")}</Link>
             </Button>
             <Button
               asChild
@@ -37,7 +41,7 @@ export default function WasteRemovalPage() {
               size="lg"
               className="border-green-600 text-green-700 hover:bg-green-50 bg-white"
             >
-              <Link href="/about">Узнать больше</Link>
+              <Link href="/about">{t("nav.about")}</Link>
             </Button>
           </div>
         </div>
@@ -47,24 +51,24 @@ export default function WasteRemovalPage() {
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-green-800 mb-12">
-            Наши контейнеры для вывоза мусора
+            {t("service.features.title")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <FeatureCard
               icon={<Leaf className="h-10 w-10 text-green-600" />}
-              title="Экологически безопасны"
-              description="Наши контейнеры разработаны с учетом экологических стандартов и не наносят вред окружающей среде"
+              title={t("service.features.eco.title")}
+              description={t("service.features.eco.description")}
             />
             <FeatureCard
               icon={<CheckCircle className="h-10 w-10 text-green-600" />}
-              title="Высокая устойчивость"
-              description="Прочная конструкция обеспечивает стабильность и безопасность при транспортировке и хранении отходов"
+              title={t("service.features.stability.title")}
+              description={t("service.features.stability.description")}
             />
             <FeatureCard
               icon={<Truck className="h-10 w-10 text-green-600" />}
-              title="Удобны для транспортировки"
-              description="Специальная конструкция позволяет легко загружать, транспортировать и разгружать контейнеры"
+              title={t("service.features.transport.title")}
+              description={t("service.features.transport.description")}
             />
           </div>
 
@@ -74,23 +78,19 @@ export default function WasteRemovalPage() {
 
           <div className="bg-green-50 p-8 rounded-xl shadow-md max-w-3xl mx-auto text-center">
             <h3 className="text-xl md:text-2xl font-semibold text-green-700 mb-4">
-              Закажите вывоз строительного мусора сегодня
+              {t("service.cta.title")}
             </h3>
-            <p className="text-gray-700 mb-6">
-              Мы обеспечиваем быструю доставку контейнеров и своевременный вывоз
-              мусора, чтобы ваш проект продвигался без задержек
-            </p>
+            <p className="text-gray-700 mb-6">{t("service.cta.description")}</p>
             <Button
               asChild
               className="bg-green-600 hover:bg-green-700 text-white"
             >
-              <Link href="/request">Оставить заявку</Link>
+              <Link href="/request">{t("service.cta.button")}</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Process and Benefits Section */}
       <section className="py-16 px-4 bg-green-50">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -100,15 +100,15 @@ export default function WasteRemovalPage() {
                   <Recycle className="h-8 w-8 text-green-600" />
                 </div>
                 <h2 className="text-2xl font-semibold text-green-800">
-                  Наш процесс вывоза отходов
+                  {t("service.process.title")}
                 </h2>
               </div>
               <ol className="space-y-4">
                 {[
-                  "Оставьте заявку - свяжитесь с нами удобным способом",
-                  "Доставка контейнера - мы привезем его на ваш объект после оформления всех формальностей",
-                  "Заполните контейнер - как только он наполнится, подайте заявку на замену",
-                  "Замена и вывоз - мы оперативно заменим контейнер и вывезем строительные отходы на утилизацию",
+                  t("service.process.step1"),
+                  t("service.process.step2"),
+                  t("service.process.step3"),
+                  t("service.process.step4"),
                 ].map((step, index) => {
                   const [boldText, normalText] = step.split(" - ");
 
@@ -132,17 +132,17 @@ export default function WasteRemovalPage() {
                   <CheckCircle className="h-8 w-8 text-green-600" />
                 </div>
                 <h2 className="text-2xl font-semibold text-green-800">
-                  Преимущества наших услуг
+                  {t("service.benefits.title")}
                 </h2>
               </div>
               <ul className="space-y-4">
                 {[
-                  "Экологичная утилизация – строгое соблюдение экологических норм и стандартов",
-                  "Квалифицированный персонал – оперативная и профессиональная работа.",
-                  "Современная техника – автопарк с системой «мультилифт» для удобной смены контейнеров",
-                  "Бункеры 15 м³ – вместительные и удобные для любых объемов мусора",
-                  "GPS-мониторинг – полный контроль передвижения транспорта в реальном времени",
-                  "Гибкие условия – конкурентные цены и индивидуальный подход к каждому клиенту",
+                  t("service.benefits.eco"),
+                  t("service.benefits.qualified"),
+                  t("service.benefits.modern"),
+                  t("service.benefits.capacity"),
+                  t("service.benefits.gps"),
+                  t("service.benefits.flexible"),
                 ].map((benefit, index) => {
                   const [boldText, normalText] = benefit.split(" – ");
 
@@ -165,11 +165,10 @@ export default function WasteRemovalPage() {
         <div className="container mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-4">
-              Наша техника
+              {t("service.equipment.title")}
             </h2>
             <p className="text-gray-700 max-w-3xl mx-auto">
-              Мы используем современную технику для вывоза строительного мусора,
-              обеспечивая быструю и эффективную работу.
+              {t("service.equipment.description")}
             </p>
           </div>
           <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 shadow-lg border border-green-100">

@@ -1,10 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Leaf, Recycle, Scale, Truck, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -27,10 +33,10 @@ export default function Home() {
             Bio Green
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8">
-            Мы за чистый город!
+            {t("home.slogan")}
           </p>
           <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
-            <Link href="/request">Оставить заявку</Link>
+            <Link href="/request">{t("home.request")}</Link>
           </Button>
         </div>
       </div>
@@ -40,10 +46,7 @@ export default function Home() {
         <div className="container mx-auto max-w-4xl">
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-green-100 transition-all duration-300 hover:shadow-lg hover:border-green-200 hover:bg-green-50/30 transform hover:-translate-y-1">
             <p className="text-gray-700 text-lg leading-relaxed text-center transition-colors duration-300 hover:text-green-800">
-              Компания BIO GREEN с 2020 года заняла прочные позиции среди
-              лидеров рынка вывоза строительных отходов. Мы зарекомендовали себя
-              как надежный и динамично развивающийся партнер, предлагающий
-              качественный сервис и индивидуальный подход к каждому клиенту.
+              {t("home.description")}
             </p>
           </div>
         </div>
@@ -52,37 +55,37 @@ export default function Home() {
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-green-800 mb-12">
-            Наши основные принципы
+            {t("home.principles")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ReasonCard
               icon={<Leaf className="h-10 w-10 text-green-600" />}
-              title="Экологическая безопасность"
-              description="Экологическая безопасность окружающей среды и бережное отношение к экосистеме"
+              title={t("home.first_title")}
+              description={t("home.first_body")}
               number={1}
             />
             <ReasonCard
               icon={<Scale className="h-10 w-10 text-green-600" />}
-              title="Соблюдение законодательства"
-              description="Соблюдение законодательства Республики Казахстан"
+              title={t("home.second_title")}
+              description={t("home.second_body")}
               number={2}
             />
             <ReasonCard
               icon={<Users className="h-10 w-10 text-green-600" />}
-              title="Ориентированность на клиента"
-              description="Качественная клиентоориентированность, гибкая система скидок, заключение договоров"
+              title={t("home.third_title")}
+              description={t("home.third_body")}
               number={3}
             />
             <ReasonCard
               icon={<Truck className="h-10 w-10 text-green-600" />}
-              title="Унификация"
-              description="Унификация автопарка в целом, повышение его мобильности и функциональности"
+              title={t("home.fourth_title")}
+              description={t("home.fourth_body")}
               number={4}
             />
             <ReasonCard
               icon={<Recycle className="h-10 w-10 text-green-600" />}
-              title="Современные технологии"
-              description="Использование современных передовых технологии - система 'мультилифт'"
+              title={t("home.fifth_title")}
+              description={t("home.fifth_body")}
               number={5}
             />
           </div>

@@ -3,8 +3,10 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import "../i18n";
 
 type Truck = {
   title: string;
@@ -13,44 +15,26 @@ type Truck = {
   alt: string;
 };
 
-const trucks: Truck[] = [
-  {
-    title: "КАМАЗ",
-    description: "Специализированный автомобиль для перевозки контейнеров",
-    image: "/images/trucks/truck1.jpg",
-    alt: "КАМАЗ Мультилифт без контейнера",
-  },
-  {
-    title: "Погрузка контейнера",
-    description: "Процесс погрузки контейнера на мультилифт",
-    image: "/images/trucks/truck2.jpg",
-    alt: "КАМАЗ с погрузкой синего контейнера",
-  },
-  {
-    title: "Автопарк Bio Green",
-    description: "Наш современный автопарк для вывоза строительного мусора",
-    image: "/images/trucks/truck3.jpg",
-    alt: "Три грузовика КАМАЗ и Scania",
-  },
-  {
-    title: "Производство контейнеров",
-    description:
-      "Мы производим собственные контейнеры для строительного мусора",
-    image: "/images/trucks/truck4.jpg",
-    alt: "Производство контейнера в цеху",
-  },
-  {
-    title: "Техника Bio Green",
-    description: "Наша техника оснащена современным оборудованием",
-    image: "/images/trucks/truck5.jpg",
-    alt: "КАМАЗ с логотипом Bio Green",
-  },
+const truckImages = [
+  "/images/trucks/truck1.jpg",
+  "/images/trucks/truck2.jpg",
+  "/images/trucks/truck3.jpg",
+  "/images/trucks/truck4.jpg",
+  "/images/trucks/truck5.jpg",
 ];
 
 export default function TruckSlider() {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
+
+  const trucks: Truck[] = (
+    t("trucks.items", { returnObjects: true }) as any[]
+  ).map((item: any, index: number) => ({
+    ...item,
+    image: truckImages[index],
+  }));
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % trucks.length);
@@ -163,7 +147,7 @@ export default function TruckSlider() {
                     ? "w-3 h-3 bg-green-600"
                     : "w-2 h-2 bg-gray-300 hover:bg-green-300"
                 )}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`${t("trucks.slideLabel")} ${index + 1}`}
               />
             ))}
           </div>

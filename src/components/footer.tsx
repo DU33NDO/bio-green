@@ -1,8 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Phone, MessageCircle, Instagram } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-green-800 text-white py-8">
       <div className="container mx-auto px-4">
@@ -17,19 +23,19 @@ export default function Footer() {
                 className="h-20 w-auto brightness-150"
               />
             </div>
-            <p className="mb-4">Мы за чистый город!</p>
-            <p>Услуги по вывозу строительных отходов</p>
+            <p className="mb-4">{t("footer.slogan")}</p>
+            <p>{t("footer.services")}</p>
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4">Быстрые ссылки</h3>
+            <h3 className="text-xl font-bold mb-4">{t("footer.quickLinks")}</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Главная страница
+                  {t("nav.home")}
                 </Link>
               </li>
               <li>
@@ -37,7 +43,7 @@ export default function Footer() {
                   href="/about"
                   className="hover:text-green-300 transition-colors"
                 >
-                  О нас
+                  {t("nav.about")}
                 </Link>
               </li>
               <li>
@@ -45,7 +51,7 @@ export default function Footer() {
                   href="/service"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Наши услуги
+                  {t("nav.services")}
                 </Link>
               </li>
               <li>
@@ -53,14 +59,14 @@ export default function Footer() {
                   href="/request"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Оставить заявку
+                  {t("nav.request")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4">Свяжитесь с нами</h3>
+            <h3 className="text-xl font-bold mb-4">{t("footer.contactUs")}</h3>
             <div className="space-y-3">
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-2" />
@@ -104,7 +110,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2" />
-                <span>Астана, Казахстан</span>
+                <span>{t("footer.address")}</span>
               </div>
             </div>
           </div>
@@ -112,7 +118,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-green-700 text-center">
           <p>
-            &copy; {new Date().getFullYear()} Bio Green. Все права защищены.
+            &copy; {new Date().getFullYear()} Bio Green. {t("footer.rights")}
           </p>
         </div>
       </div>

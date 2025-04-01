@@ -2,8 +2,10 @@
 
 import { useEffect, useRef } from "react";
 import { Mail, MapPin, Phone, Building } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import ClientSlider from "@/components/client-slider";
 import { Loader } from "@googlemaps/js-api-loader";
+import "../../i18n";
 
 declare global {
   interface Window {
@@ -13,6 +15,7 @@ declare global {
 
 export default function AboutPage() {
   const mapRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const initMap = async () => {
@@ -57,30 +60,26 @@ export default function AboutPage() {
     <main className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-8 text-center">
-          О нас
+          {t("about.title")}
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div>
             <h2 className="text-2xl font-semibold text-green-700 mb-6">
-              Наша миссия
+              {t("about.mission.title")}
             </h2>
             <p className="text-gray-700 mb-6">
-              Компания Bio Green стремится предлагать экологически безопасные
-              решения по утилизации отходов. Наша миссия - внести свой вклад в
-              создание более чистого города, предлагая эффективные услуги по
-              вывозу строительного мусора при соблюдении самых высоких
-              экологических стандартов.
+              {t("about.mission.description")}
             </p>
 
             <h2 className="text-2xl font-semibold text-green-700 mb-6">
-              Контактная информация
+              {t("about.contact.title")}
             </h2>
             <div className="space-y-4">
               <div className="flex items-center">
                 <Phone className="h-6 w-6 text-green-600 mr-3" />
                 <div>
-                  <h3 className="font-medium">Телефон</h3>
+                  <h3 className="font-medium">{t("about.contact.phone")}</h3>
                   <a
                     href="tel:+77005677070"
                     className="hover:text-green-600 transition-colors"
@@ -93,7 +92,7 @@ export default function AboutPage() {
               <div className="flex items-center">
                 <Mail className="h-6 w-6 text-green-600 mr-3" />
                 <div>
-                  <h3 className="font-medium">Email</h3>
+                  <h3 className="font-medium">{t("about.contact.email")}</h3>
                   <a
                     href="mailto:bio_green21@mail.ru"
                     className="hover:text-green-600 transition-colors"
@@ -106,11 +105,10 @@ export default function AboutPage() {
               <div className="flex items-center">
                 <MapPin className="h-6 w-6 text-green-600 mr-3" />
                 <div>
-                  <h3 className="font-medium">Адрес</h3>
-                  <p>
-                    Экспо-бульвар 5, пр. Кабанбай батыра, 58 "Б" корпус 6, офис
-                    1, г. Астана
-                  </p>
+                  <h3 className="font-medium">
+                    {t("about.contact.address.title")}
+                  </h3>
+                  <p>{t("about.contact.address.value")}</p>
                 </div>
               </div>
             </div>
@@ -131,11 +129,10 @@ export default function AboutPage() {
               <Building className="h-8 w-8 text-green-600" />
             </div>
             <h2 className="text-3xl font-bold text-green-800 mb-3">
-              Наши клиенты
+              {t("about.clients.title")}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Мы гордимся сотрудничеством с ведущими компаниями Казахстана,
-              которые доверяют нам вывоз и утилизацию строительных отходов.
+              {t("about.clients.description")}
             </p>
           </div>
 
