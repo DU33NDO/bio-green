@@ -18,11 +18,71 @@ import "../../i18n";
 
 export default function RequestPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    address: "",
+    serviceType: "",
+    message: "",
+  });
   const { t } = useTranslation();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      serviceType: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
+
+    try {
+      const googleFormUrl =
+        "https://docs.google.com/forms/d/e/1FAIpQLSe4bSHck7DfXbARmWupSkjEvGxDvZKZ6BUbIlQT28FSxtJXDg/formResponse";
+
+      const formSubmission = new FormData();
+      formSubmission.append("entry.2064660761", formData.name);
+      formSubmission.append("entry.262678051", formData.phone);
+      formSubmission.append(
+        "entry.507337508",
+        formData.email || "Not provided"
+      );
+      formSubmission.append(
+        "entry.1683173620",
+        formData.address || "Not provided"
+      );
+      formSubmission.append(
+        "entry.201877601",
+        formData.serviceType || "Not provided"
+      );
+      formSubmission.append(
+        "entry.1091497499",
+        formData.message || "Not provided"
+      );
+
+      await fetch(googleFormUrl, {
+        method: "POST",
+        mode: "no-cors", // This is important for CORS issues with Google Forms
+        body: formSubmission,
+      });
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert(t("request.error.submission"));
+    }
   };
 
   if (isSubmitted) {
@@ -62,6 +122,8 @@ export default function RequestPage() {
                   placeholder={t("request.form.name.placeholder")}
                   className="focus:border-green-600 focus:ring-green-600 focus:ring-2"
                   required
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -72,6 +134,8 @@ export default function RequestPage() {
                   placeholder={t("request.form.phone.placeholder")}
                   className="focus:border-green-600 focus:ring-green-600 focus:ring-2"
                   required
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -83,7 +147,8 @@ export default function RequestPage() {
                 type="email"
                 placeholder={t("request.form.email.placeholder")}
                 className="focus:border-green-600 focus:ring-green-600 focus:ring-2"
-                required
+                value={formData.email}
+                onChange={handleChange}
               />
             </div>
 
@@ -93,7 +158,8 @@ export default function RequestPage() {
                 id="address"
                 placeholder={t("request.form.address.placeholder")}
                 className="focus:border-green-600 focus:ring-green-600 focus:ring-2"
-                required
+                value={formData.address}
+                onChange={handleChange}
               />
             </div>
 
@@ -101,7 +167,10 @@ export default function RequestPage() {
               <Label htmlFor="service-type">
                 {t("request.form.service.label")}
               </Label>
-              <Select>
+              <Select
+                onValueChange={handleSelectChange}
+                value={formData.serviceType}
+              >
                 <SelectTrigger className="w-full bg-white border-gray-300 focus:border-green-600 focus:ring-green-600 focus:ring-2">
                   <SelectValue
                     placeholder={t("request.form.service.placeholder")}
@@ -143,6 +212,8 @@ export default function RequestPage() {
                 placeholder={t("request.form.message.placeholder")}
                 className="focus:border-green-600 focus:ring-green-600 focus:ring-2"
                 rows={4}
+                value={formData.message}
+                onChange={handleChange}
               />
             </div>
 
