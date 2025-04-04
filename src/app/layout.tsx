@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} font-sans antialiased `}>
+      <body className={montserrat.className}>
         <Header />
         {children}
         <Footer />
