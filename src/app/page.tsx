@@ -32,7 +32,7 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-white mb-2">
             {t("home.slogan")}
           </p>
-          <p className="text-lg md:text-xl text-white mb-8">
+          <p className="text-lg md:text-xl text-white mb-8 font-bold">
             {t("home.under_slogan")}
           </p>
           <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
