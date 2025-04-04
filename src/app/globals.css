@@ -3,6 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-300: #86efac;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
 }
 
 @theme inline {
@@ -63,4 +73,56 @@ footer * {
   -o-filter: brightness(75%);
   -ms-filter: brightness(75%);
   filter: brightness(75%);
+}
+
+/* Reinforce green colors */
+.bg-green-50 {
+  background-color: var(--green-50) !important;
+}
+.bg-green-100 {
+  background-color: var(--green-100) !important;
+}
+.bg-green-200 {
+  background-color: var(--green-200) !important;
+}
+.bg-green-300 {
+  background-color: var(--green-300) !important;
+}
+.bg-green-400 {
+  background-color: var(--green-400) !important;
+}
+.bg-green-500 {
+  background-color: var(--green-500) !important;
+}
+.bg-green-600 {
+  background-color: var(--green-600) !important;
+}
+.bg-green-700 {
+  background-color: var(--green-700) !important;
+}
+.bg-green-800 {
+  background-color: var(--green-800) !important;
+}
+.bg-green-900 {
+  background-color: var(--green-900) !important;
+}
+
+.text-green-600 {
+  color: var(--green-600) !important;
+}
+.text-green-700 {
+  color: var(--green-700) !important;
+}
+.text-green-800 {
+  color: var(--green-800) !important;
+}
+
+/* Make sure green buttons work */
+.bg-green-600,
+.hover\:bg-green-700:hover {
+  background-color: var(--green-600) !important;
+}
+
+.hover\:bg-green-700:hover {
+  background-color: var(--green-700) !important;
 }
