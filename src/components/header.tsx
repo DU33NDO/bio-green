@@ -58,7 +58,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
+        "sticky top-0 z-50 transition-all duration-300 roboto-font",
         scrolled ? "bg-white shadow-md" : "bg-white shadow-sm",
         isMenuOpen && "bg-green-50"
       )}
@@ -78,25 +78,25 @@ export default function Header() {
 
           <div className="flex items-center gap-3 md:mr-6">
             <Select onValueChange={changeLanguage} defaultValue={i18n.language}>
-              <SelectTrigger className="w-[80px] bg-green-50 border-0 focus:ring-0 focus:ring-offset-0 focus:outline-none shadow-none text-green-600 hover:bg-green-200 transition-colors">
+              <SelectTrigger className="w-[80px] bg-green-50 border-0 focus:ring-0 focus:ring-offset-0 focus:outline-none shadow-none text-green-600 hover:bg-green-200 transition-colors roboto-font">
                 <Globe className="h-4 w-4 mr-2" />
                 <SelectValue placeholder="Lang" />
               </SelectTrigger>
-              <SelectContent className="bg-white border-0 shadow-md outline-none focus:outline-none">
+              <SelectContent className="bg-white border-0 shadow-md outline-none focus:outline-none roboto-font">
                 <SelectItem
-                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0"
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0 roboto-font"
                   value="ru"
                 >
                   РУС
                 </SelectItem>
                 <SelectItem
-                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0"
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0 roboto-font"
                   value="kz"
                 >
                   ҚАЗ
                 </SelectItem>
                 <SelectItem
-                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0"
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0 roboto-font"
                   value="en"
                 >
                   ENG
@@ -236,7 +236,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="text-gray-700 hover:text-green-600 font-medium transition-colors"
+      className="text-gray-700 hover:text-green-600 font-normal transition-colors fix-letters roboto-font"
       onClick={onClick}
     >
       {children}
@@ -259,7 +259,7 @@ function MobileNavLink({
     <Link
       href={href}
       className={cn(
-        "flex items-center py-3 px-4 rounded-lg font-medium transition-all",
+        "flex items-center py-3 px-4 rounded-lg font-normal transition-all roboto-font",
         active
           ? "bg-green-100 text-green-700"
           : "text-gray-700 hover:bg-green-100 hover:text-green-700"
