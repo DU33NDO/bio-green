@@ -19,7 +19,10 @@ export default function Home() {
             src="/images/background.jpeg"
             alt="Waste removal truck"
             fill
-            className="object-cover filter blur-[4px] brightness-75 scale-105"
+            className="object-cover scale-105"
+            style={{
+              filter: "blur(4px) brightness(75%)",
+            }}
             priority
           />
           <div className="absolute inset-0 bg-black/30" />

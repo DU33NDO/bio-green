@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  background: #ffffff;
-  /* --foreground: #171717; */
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @theme inline {
@@ -40,4 +40,27 @@ input,
 textarea,
 select {
   font-family: "Montserrat", Arial, Helvetica, sans-serif !important;
+}
+
+/* Ensure footer text is white */
+footer,
+footer * {
+  color: white !important;
+}
+
+/* Ensure filters work across browsers */
+.blur-effect {
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}
+
+.brightness-effect {
+  -webkit-filter: brightness(75%);
+  -moz-filter: brightness(75%);
+  -o-filter: brightness(75%);
+  -ms-filter: brightness(75%);
+  filter: brightness(75%);
 }
