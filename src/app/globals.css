@@ -13,6 +13,7 @@
   --green-700: #15803d;
   --green-800: #166534;
   --green-900: #14532d;
+  --default-text-color: #333333;
 }
 
 @theme inline {
@@ -29,7 +30,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--default-text-color);
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
@@ -50,12 +51,24 @@ input,
 textarea,
 select {
   font-family: "Montserrat", Arial, Helvetica, sans-serif !important;
+  color: var(--default-text-color);
 }
 
 /* Ensure footer text is white */
 footer,
 footer * {
   color: white !important;
+}
+
+/* Remove unwanted borders */
+.border,
+.border-green-100 {
+  border: none !important;
+}
+
+/* But keep certain borders */
+footer .border-t {
+  border-top: 1px solid var(--green-700) !important;
 }
 
 /* Ensure filters work across browsers */
@@ -107,6 +120,15 @@ footer * {
   background-color: var(--green-900) !important;
 }
 
+/* Text colors */
+.text-white {
+  color: white !important;
+}
+
+.text-green-300 {
+  color: var(--green-300) !important;
+}
+
 .text-green-600 {
   color: var(--green-600) !important;
 }
@@ -125,4 +147,34 @@ footer * {
 
 .hover\:bg-green-700:hover {
   background-color: var(--green-700) !important;
+}
+
+/* Fix for hover states */
+.hover\:text-green-300:hover {
+  color: var(--green-300) !important;
+}
+
+.hover\:text-green-600:hover {
+  color: var(--green-600) !important;
+}
+
+/* Fix for browser inconsistencies in the About page */
+.h-\[400px\] {
+  height: 400px !important;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem !important;
+  border: none !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+}
+
+/* Fix Google Maps container */
+[ref="mapRef"] {
+  border: none !important;
 }

@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="py-10 px-4 bg-green-50">
+      <section className="py-10 px-4 bg-green-50" style={{ border: "none" }}>
         <div className="container mx-auto max-w-4xl">
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-green-100 transition-all duration-300 hover:shadow-lg hover:border-green-200 hover:bg-green-50/30 transform hover:-translate-y-1">
             <p className="text-gray-700 text-lg leading-relaxed text-center transition-colors duration-300 hover:text-green-800">

@@ -117,6 +117,7 @@ export default function AboutPage() {
           <div
             ref={mapRef}
             className="h-[400px] bg-gray-100 rounded-lg overflow-hidden"
+            style={{ border: "none" }}
           >
             {/* Google Map will be loaded here */}
           </div>
@@ -136,7 +137,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 shadow-lg border border-green-100">
+          <div
+            className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 shadow-lg"
+            style={{ border: "none" }}
+          >
             <ClientSlider />
           </div>
         </section>
