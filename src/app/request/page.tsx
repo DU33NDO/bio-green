@@ -106,7 +106,7 @@ export default function RequestPage() {
   }
 
   return (
-    <main className="min-h-screen py-12 px-4">
+    <main className="min-h-screen py-12 px-4 request-page">
       <div className="container mx-auto max-w-2xl">
         <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-8 text-center">
           {t("request.title")}
