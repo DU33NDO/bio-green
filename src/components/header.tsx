@@ -78,7 +78,7 @@ export default function Header() {
 
           <div className="flex items-center gap-3 md:mr-6">
             <Select onValueChange={changeLanguage} defaultValue={i18n.language}>
-              <SelectTrigger className="w-[80px] bg-green-50">
+              <SelectTrigger className="w-[80px] bg-green-50 border-0 focus:ring-0 focus:ring-offset-0">
                 <Globe className="h-4 w-4 mr-2" />
                 <SelectValue placeholder="Lang" />
               </SelectTrigger>

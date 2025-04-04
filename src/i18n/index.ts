@@ -3,7 +3,6 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 
-// Initialize i18next
 const i18nInstance = i18next.createInstance();
 
 i18nInstance.use(initReactI18next).init({
@@ -18,6 +17,7 @@ i18nInstance.use(initReactI18next).init({
         },
         home: {
           slogan: "Мы за чистый город!",
+          under_slogan: "Вывоз строительного мусора",
           request: "Оставить заявку",
           description:
             "Компания BIO GREEN с 2020 года заняла прочные позиции среди лидеров рынка вывоза строительных отходов. Мы зарекомендовали себя как надежный и динамично развивающийся партнер, предлагающий качественный сервис и индивидуальный подход к каждому клиенту.",
@@ -217,6 +217,7 @@ i18nInstance.use(initReactI18next).init({
         },
         home: {
           slogan: "We stand for a clean city!",
+          under_slogan: "Construction waste removal",
           request: "Submit Request",
           description:
             "Since 2020, BIO GREEN has established strong positions among the leaders in the construction waste removal market. We have proven ourselves as a reliable and dynamically developing partner, offering quality service and an individual approach to each client.",
@@ -413,6 +414,7 @@ i18nInstance.use(initReactI18next).init({
         },
         home: {
           slogan: "Біз таза қала үшін еңбек етеміз!",
+          under_slogan: "Құрылыс қалдықтарын шығару",
           request: "Өтінім қалдыру",
           description:
             "BIO GREEN компаниясы 2020 жылдан бастап құрылыс қалдықтарын шығару нарығындағы көшбасшылар қатарынан берік орын алды. Біз сапалы қызмет пен жекелей көзқарас ұсынатын сенімді әрі қарқынды дамып келе жатқан серіктес ретінде танылдық.",
@@ -464,7 +466,7 @@ i18nInstance.use(initReactI18next).init({
           subtitle:
             "Біз құрылыс қалдықтарын шығару бойынша экологиялық қауіпсіз шешімдерді ұсынамыз",
           features: {
-            title: "Наши контейнеры для вывоза мусора",
+            title: "Біздің қоқыс жәшіктеріміз",
             eco: {
               title: "Экологиялық қауіпсіз",
               description:

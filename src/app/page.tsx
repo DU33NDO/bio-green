@@ -32,11 +32,16 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
             Bio Green
           </h1>
-          <p className="text-xl md:text-2xl text-white mb-8">
+          <p className="text-xl md:text-2xl text-white mb-2">
             {t("home.slogan")}
           </p>
+          <p className="text-lg md:text-xl text-white mb-8">
+            {t("home.under_slogan")}
+          </p>
           <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
-            <Link href="/request">{t("home.request")}</Link>
+            <Link className="text-white" href="/request">
+              {t("home.request")}
+            </Link>
           </Button>
         </div>
       </div>

@@ -19,33 +19,6 @@ export default function WasteRemovalPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-green-50 py-16 px-4">
-        <div className="container mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-green-800 mb-6">
-            {t("service.title")}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
-            {t("service.subtitle")}
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-            <Button
-              asChild
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white"
-            >
-              <Link href="/request">{t("nav.request")}</Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-green-600 text-green-700 hover:bg-green-50 bg-white"
-            >
-              <Link href="/about">{t("nav.about")}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Features Section */}
       <section className="py-16 px-4 bg-white">
