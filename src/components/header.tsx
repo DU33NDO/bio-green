@@ -84,21 +84,21 @@ export default function Header() {
                 <Globe className="h-4 w-4 mr-2" />
                 <SelectValue placeholder="Lang" />
               </SelectTrigger>
-              <SelectContent className="bg-white">
+              <SelectContent className="bg-white border-0 shadow-md outline-none focus:outline-none">
                 <SelectItem
-                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer"
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0"
                   value="ru"
                 >
                   РУС
                 </SelectItem>
                 <SelectItem
-                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer"
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0"
                   value="kz"
                 >
                   ҚАЗ
                 </SelectItem>
                 <SelectItem
-                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer"
+                  className="flex items-center pl-2 pr-8 hover:bg-green-50 focus:bg-green-50 cursor-pointer focus:outline-none focus:ring-0"
                   value="en"
                 >
                   ENG
