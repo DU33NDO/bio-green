@@ -106,7 +106,7 @@ export default function ClientSlider() {
                 >
                   <div
                     className={cn(
-                      "bg-white rounded-xl shadow-lg p-6 md:p-8 w-72 md:w-96 h-32 md:h-40 flex items-center justify-center",
+                      "bg-white rounded-xl shadow-lg p-6 md:p-8 w-72 md:w-96 h-32 md:h-40 flex items-center justify-center client-slider-card",
                       "transition-all duration-500 transform",
                       "border border-gray-100",
                       isActive ? "shadow-xl" : "shadow-md"
@@ -128,7 +128,7 @@ export default function ClientSlider() {
 
         {/* Client name */}
         <div className="text-center mb-8 h-8">
-          <p className="text-lg font-medium text-green-800 transition-all duration-500 transform">
+          <p className="text-lg font-medium text-green-800 transition-all duration-500 transform client-name">
             {clients[currentIndex].name}
           </p>
         </div>

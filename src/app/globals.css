@@ -178,3 +178,25 @@ footer .border-t {
 [ref="mapRef"] {
   border: none !important;
 }
+
+/* Slider styles */
+.client-slider-card {
+  background-color: #f8f9fa !important;
+  border: none !important;
+}
+
+.truck-slider-card {
+  background-color: #f8f9fa !important;
+  border: none !important;
+}
+
+/* Make sure truck slider text is white */
+.truck-slider-text h3,
+.truck-slider-text p {
+  color: white !important;
+}
+
+/* Make sure client name is visible */
+.client-name {
+  color: var(--green-800) !important;
+}

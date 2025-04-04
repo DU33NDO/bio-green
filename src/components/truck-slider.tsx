@@ -52,7 +52,6 @@ export default function TruckSlider() {
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying || isHovering) return;
 
@@ -69,12 +68,10 @@ export default function TruckSlider() {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-20 h-20 bg-green-100 rounded-full opacity-20 -translate-x-10 -translate-y-10"></div>
       <div className="absolute bottom-0 right-0 w-32 h-32 bg-green-200 rounded-full opacity-20 translate-x-16 translate-y-16"></div>
 
       <div className="relative mx-auto max-w-4xl">
-        {/* Main slider */}
         <div className="relative h-64 md:h-80 lg:h-96 mb-8">
           <div className="absolute inset-0 flex items-center justify-center">
             {trucks.map((truck, index) => {
@@ -97,7 +94,7 @@ export default function TruckSlider() {
                 >
                   <div
                     className={cn(
-                      "bg-white rounded-xl shadow-lg p-2 w-full h-full max-w-3xl",
+                      "bg-white rounded-xl shadow-lg p-2 w-full h-full max-w-3xl truck-slider-card",
                       "transition-all duration-500 transform",
                       "border border-gray-100 overflow-hidden",
                       isActive ? "shadow-xl" : "shadow-md"
@@ -110,9 +107,11 @@ export default function TruckSlider() {
                         fill
                         className="object-cover rounded-lg"
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
-                        <h3 className="text-xl font-bold">{truck.title}</h3>
-                        <p className="text-sm text-gray-200">
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 truck-slider-text">
+                        <h3 className="text-xl font-bold text-white">
+                          {truck.title}
+                        </h3>
+                        <p className="text-sm text-white">
                           {truck.description}
                         </p>
                       </div>
@@ -124,7 +123,6 @@ export default function TruckSlider() {
           </div>
         </div>
 
-        {/* Navigation buttons */}
         <div className="flex justify-center items-center gap-8 mb-6">
           <Button
             variant="outline"
@@ -135,7 +133,6 @@ export default function TruckSlider() {
             <ChevronLeft className="h-5 w-5 text-green-700" />
           </Button>
 
-          {/* Indicators */}
           <div className="flex justify-center space-x-2">
             {trucks.map((_, index) => (
               <button
