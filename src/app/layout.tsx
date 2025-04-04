@@ -5,10 +5,12 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 const montserrat = Montserrat({
-  subsets: ["latin", "cyrillic"],
+  subsets: ["latin", "cyrillic", "cyrillic-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-montserrat",
   display: "swap",
+  preload: true,
+  fallback: ["Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
