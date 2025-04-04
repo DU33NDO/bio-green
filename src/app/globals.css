@@ -200,3 +200,25 @@ footer .border-t {
 .client-name {
   color: var(--green-800) !important;
 }
+
+/* Slider indicator styling */
+.transition-all.duration-300.rounded-full {
+  background-color: #d1d5db !important; /* Light gray color */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Active indicator */
+.w-3.h-3.bg-green-600 {
+  background-color: var(--green-600) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Inactive indicator */
+.w-2.h-2.bg-gray-300 {
+  background-color: #d1d5db !important;
+}
+
+/* Hover state for indicators */
+.hover\:bg-green-300:hover {
+  background-color: var(--green-300) !important;
+}
