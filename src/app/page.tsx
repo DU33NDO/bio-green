@@ -13,18 +13,15 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Hero Section */}
       <div className="relative h-[70vh] w-full overflow-hidden">
-        {/* Background Image with Blur */}
         <div className="absolute inset-0">
           <Image
-            src="/images/background.jpg"
+            src="/images/background.jpeg"
             alt="Waste removal truck"
             fill
-            className="object-cover filter blur-[2px] brightness-75 scale-105"
+            className="object-cover filter blur-[4px] brightness-75 scale-105"
             priority
           />
-          {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-black/30" />
         </div>
 
@@ -46,7 +43,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Company Description Section */}
       <section className="py-10 px-4 bg-green-50">
         <div className="container mx-auto max-w-4xl">
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-green-100 transition-all duration-300 hover:shadow-lg hover:border-green-200 hover:bg-green-50/30 transform hover:-translate-y-1">
