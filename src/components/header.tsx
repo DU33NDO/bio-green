@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MessageCircle, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { usePathname } from "next/navigation";
 import "../i18n";
 
 import { Button } from "@/components/ui/button";
@@ -21,6 +22,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t, i18n } = useTranslation();
+  const pathname = usePathname();
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -78,7 +80,7 @@ export default function Header() {
 
           <div className="flex items-center gap-3 md:mr-6">
             <Select onValueChange={changeLanguage} defaultValue={i18n.language}>
-              <SelectTrigger className="w-[80px] bg-green-50 border-0 focus:ring-0 focus:ring-offset-0">
+              <SelectTrigger className="w-[80px] bg-green-50 border-0 focus:ring-0 focus:ring-offset-0 focus:outline-none shadow-none">
                 <Globe className="h-4 w-4 mr-2" />
                 <SelectValue placeholder="Lang" />
               </SelectTrigger>
@@ -181,16 +183,32 @@ export default function Header() {
           )}
         >
           <nav className="flex flex-col space-y-1 py-2">
-            <MobileNavLink href="/" onClick={toggleMenu} active={true}>
+            <MobileNavLink
+              href="/"
+              onClick={toggleMenu}
+              active={pathname === "/"}
+            >
               {t("nav.home")}
             </MobileNavLink>
-            <MobileNavLink href="/about" onClick={toggleMenu}>
+            <MobileNavLink
+              href="/about"
+              onClick={toggleMenu}
+              active={pathname === "/about"}
+            >
               {t("nav.about")}
             </MobileNavLink>
-            <MobileNavLink href="/service" onClick={toggleMenu}>
+            <MobileNavLink
+              href="/service"
+              onClick={toggleMenu}
+              active={pathname === "/service"}
+            >
               {t("nav.services")}
             </MobileNavLink>
-            <MobileNavLink href="/request" onClick={toggleMenu}>
+            <MobileNavLink
+              href="/request"
+              onClick={toggleMenu}
+              active={pathname === "/request"}
+            >
               {t("nav.request")}
             </MobileNavLink>
           </nav>
