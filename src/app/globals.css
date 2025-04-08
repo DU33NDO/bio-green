@@ -15,6 +15,12 @@
   --green-700: #15803d;
   --green-800: #166534;
   --green-900: #14532d;
+  --red-50: #fef2f2;
+  --red-100: #fee2e2;
+  --red-200: #fecaca;
+  --red-600: #dc2626;
+  --red-800: #991b1b;
+  --gray-800: #1f2937;
   --default-text-color: #333333;
 }
 
@@ -147,6 +153,34 @@ footer .border-t {
 }
 .bg-green-900 {
   background-color: var(--green-900) !important;
+}
+
+/* Red color classes */
+.bg-red-50 {
+  background-color: var(--red-50) !important;
+}
+.bg-red-100 {
+  background-color: var(--red-100) !important;
+}
+.border-red-200 {
+  border-color: var(--red-200) !important;
+}
+.border-red-600 {
+  border-color: var(--red-600) !important;
+}
+.text-red-600 {
+  color: var(--red-600) !important;
+}
+.text-red-800 {
+  color: var(--red-800) !important;
+}
+
+/* Gray color classes */
+.bg-gray-800 {
+  background-color: var(--gray-800) !important;
+}
+.text-gray-800 {
+  color: var(--gray-800) !important;
 }
 
 .text-white {

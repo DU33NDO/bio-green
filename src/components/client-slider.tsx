@@ -44,12 +44,12 @@ const clients: Client[] = [
     alt: "Mabex Logo",
   },
   {
-    name: "Integra",
+    name: "Integra construction",
     logo: "/images/clients/Integra.svg",
     alt: "Integra Logo",
   },
   {
-    name: "Ulytau",
+    name: "Ulytau Group",
     logo: "/images/clients/Ulytau.svg",
     alt: "Ulytau Logo",
   },
@@ -155,7 +155,7 @@ export default function ClientSlider() {
                         client.name === "Mabex" && "scale-125",
                         client.name === "Шар-Құрылыс" && "scale-250",
                         (client.name === "Mabex" ||
-                          client.name === "Integra") &&
+                          client.name === "Integra construction") &&
                           "bg-gray-800 p-3 rounded-md"
                       )}
                     />
