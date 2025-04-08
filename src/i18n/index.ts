@@ -17,7 +17,7 @@ i18nInstance.use(initReactI18next).init({
         },
         home: {
           slogan: "Мы за чистый город!",
-          under_slogan: "Вывоз строительных отходов",
+          under_slogan: "Вывоз строительных и твердых бытовых отходов",
           request: "Оставить заявку",
           description:
             "Компания BIO GREEN с 2020 года заняла прочные позиции среди лидеров рынка вывоза строительных отходов. Мы зарекомендовали себя как надежный и динамично развивающийся партнер, предлагающий качественный сервис и индивидуальный подход к каждому клиенту.",
@@ -85,6 +85,33 @@ i18nInstance.use(initReactI18next).init({
               description:
                 "Специальная конструкция позволяет легко загружать, транспортировать и разгружать контейнеры",
             },
+          },
+          attention: {
+            title: "ВНИМАНИЕ!!!",
+            illegal:
+              "Вывоз бытовых и строительных отходов за пределы города либо на несанкционированные свалки запрещается и строго караются законом РК.",
+            legislation:
+              "В соответствии с законодательством РК Все отходы подлежат вывозу на специализированные городские полигоны где производится их надлежащая утилизация.",
+            monitoring:
+              "Нарушения фиксируются с помощью видеонаблюдения («Сергек»), GPS и рейдов с участием экологической полиции",
+            penalties: "За нарушение предусмотрены штрафы:",
+            individuals: "Физические лица — до 100 МРП (393 200 тенге)",
+            entities: "Юридические лица — до 1000 МРП (3 932 000 тенге)",
+            repeat:
+              "Повторное нарушение — удвоенный штраф и возможная конфискация техники",
+            responsibility:
+              "Соблюдение правил — это не только вопрос закона, но и экологии города.",
+            licensed: "У нас — лицензия, транспорт и опыт",
+            authorized: "Вывозим строго на специализированные полигоны",
+            documentation: "Предоставляем все закрывающие документы",
+            view_certificate: "Посмотреть нашу лицензию",
+            contact:
+              "Обратитесь к нам — и избавьтесь от отходов легально и без рисков!",
+            regulatory: "Нормативные документы:",
+            ecoCode: "Экологический кодекс РК",
+            adminCode:
+              "Кодекс РК об административных правонарушениях (ст. 344, 505)",
+            city: "Правила благоустройства г. Астаны",
           },
           cta: {
             title: "Закажите вывоз строительного мусора сегодня",
@@ -217,7 +244,7 @@ i18nInstance.use(initReactI18next).init({
         },
         home: {
           slogan: "We stand for a clean city!",
-          under_slogan: "Construction waste removal",
+          under_slogan: "Removal of construction and solid household waste",
           request: "Submit Request",
           description:
             "Since 2020, BIO GREEN has established strong positions among the leaders in the construction waste removal market. We have proven ourselves as a reliable and dynamically developing partner, offering quality service and an individual approach to each client.",
@@ -286,6 +313,32 @@ i18nInstance.use(initReactI18next).init({
               description:
                 "Special design allows for easy loading, transportation, and unloading of containers",
             },
+          },
+          attention: {
+            title: "ATTENTION!!!",
+            illegal:
+              "The removal of household and construction waste outside the city or to unauthorized dumps is prohibited and strictly punishable under the laws of the Republic of Kazakhstan.",
+            legislation:
+              "According to Kazakhstani legislation, all waste must be transported to specialized city landfills where proper disposal is carried out.",
+            monitoring:
+              "Violations are monitored using video surveillance ('Sergek'), GPS tracking, and raids involving the environmental police.",
+            penalties: "Penalties for violations include:",
+            individuals: "Individuals — up to 100 MCI (393,200 KZT)",
+            entities: "Legal entities — up to 1,000 MCI (3,932,000 KZT)",
+            repeat:
+              "Repeat offenses — double the fine and possible confiscation of equipment",
+            responsibility:
+              "Following the rules is not only a legal obligation but also a matter of environmental responsibility.",
+            licensed: "We are licensed, equipped, and experienced",
+            authorized: "We transport strictly to authorized landfills",
+            documentation: "We provide all required documentation",
+            view_certificate: "View our license",
+            contact: "Contact us — dispose of waste legally and risk-free!",
+            regulatory: "Regulatory Documents:",
+            ecoCode: "Ecological Code of the Republic of Kazakhstan",
+            adminCode:
+              "Code of Administrative Offenses of the Republic of Kazakhstan (Articles 344, 505)",
+            city: "Rules for the Improvement of the City of Astana",
           },
           cta: {
             title: "Order Construction Waste Removal Today",
@@ -414,7 +467,7 @@ i18nInstance.use(initReactI18next).init({
         },
         home: {
           slogan: "Біз таза қала үшін еңбек етеміз!",
-          under_slogan: "Құрылыс қалдықтарын шығару",
+          under_slogan: "Құрылыс және қатты тұрмыстық қалдықтарды шығару",
           request: "Өтінім қалдыру",
           description:
             "BIO GREEN компаниясы 2020 жылдан бастап құрылыс қалдықтарын шығару нарығындағы көшбасшылар қатарынан берік орын алды. Біз сапалы қызмет пен жекелей көзқарас ұсынатын сенімді әрі қарқынды дамып келе жатқан серіктес ретінде танылдық.",
@@ -482,6 +535,33 @@ i18nInstance.use(initReactI18next).init({
               description:
                 "Арнайы конструкция контейнерлерді жүктеуді, тасымалдауды және түсіруді жеңілдетеді",
             },
+          },
+          attention: {
+            title: "НАЗАР АУДАРЫҢЫЗ!!!",
+            illegal:
+              "Тұрмыстық және құрылыс қалдықтарын қаладан тыс жерге немесе рұқсат етілмеген полигондарға шығаруға тыйым салынады және бұл әрекеттер ҚР заңнамасына сәйкес қатаң жазаланады.",
+            legislation:
+              "ҚР заңнамасына сәйкес, барлық қалдықтар арнайы қалалық полигондарға шығарылып, онда тиісті түрде кәдеге жаратылады.",
+            monitoring:
+              "Бұзушылықтар бейнебақылау жүйесі («Сергек»), GPS бақылау және экологиялық полиция қатысатын рейдтер арқылы анықталады.",
+            penalties: "Бұзушылықтар үшін айыппұлдар қарастырылған:",
+            individuals: "Жеке тұлғаларға — 100 АЕК-ке дейін (393 200 теңге)",
+            entities: "Заңды тұлғаларға — 1000 АЕК-ке дейін (3 932 000 теңге)",
+            repeat:
+              "Қайталанған жағдайда — айыппұл екі есе артып, техника тәркіленуі мүмкін",
+            responsibility:
+              "Ережелерді сақтау — бұл заң талабы ғана емес, сонымен қатар қаланың экологиясын қорғау ісі.",
+            licensed: "Бізде — лицензия, арнайы техника және тәжірибе бар",
+            authorized: "Қалдықтарды тек арнайы полигондарға жеткіземіз",
+            documentation: "Барлық есептік және жабу құжаттарын ұсынамыз",
+            view_certificate: "Біздің лицензияны қарау",
+            contact:
+              "Бізге хабарласыңыз — қалдықтардан заңды әрі қауіпсіз түрде құтылыңыз!",
+            regulatory: "Нормативтік құжаттар:",
+            ecoCode: "ҚР Экологиялық кодексі",
+            adminCode:
+              "ҚР Әкімшілік құқық бұзушылық туралы кодексі (344, 505-баптар)",
+            city: "Астана қаласының абаттандыру ережелері",
           },
           cta: {
             title: "Құрылыс қалдықтарын шығару қызметіне тапсырыс беру",

@@ -118,12 +118,9 @@ export default function AboutPage() {
             ref={mapRef}
             className="h-[400px] bg-gray-100 rounded-lg overflow-hidden"
             style={{ border: "none" }}
-          >
-            {/* Google Map will be loaded here */}
-          </div>
+          ></div>
         </div>
 
-        {/* Our Clients Section */}
         <section className="mb-16">
           <div className="text-center mb-10">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">

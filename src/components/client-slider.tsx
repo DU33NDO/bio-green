@@ -38,6 +38,41 @@ const clients: Client[] = [
     logo: "/images/clients/qazaq-stroy.png",
     alt: "Qazaq Stroy Logo",
   },
+  {
+    name: "Mabex",
+    logo: "/images/clients/Mabex.svg",
+    alt: "Mabex Logo",
+  },
+  {
+    name: "Integra",
+    logo: "/images/clients/Integra.svg",
+    alt: "Integra Logo",
+  },
+  {
+    name: "Ulytau",
+    logo: "/images/clients/Ulytau.svg",
+    alt: "Ulytau Logo",
+  },
+  {
+    name: "Svoy Dom",
+    logo: "/images/clients/Svoydom.svg",
+    alt: "Svoy Dom Logo",
+  },
+  {
+    name: "Modex",
+    logo: "/images/clients/Modex.png",
+    alt: "Modex Logo",
+  },
+  {
+    name: "G-Park",
+    logo: "/images/clients/GPark.svg",
+    alt: "G-Park Logo",
+  },
+  {
+    name: "Bagystan",
+    logo: "/images/clients/Bagystan.png",
+    alt: "Bagystan Logo",
+  },
 ];
 
 export default function ClientSlider() {
@@ -61,7 +96,6 @@ export default function ClientSlider() {
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying || isHovering) return;
 
@@ -78,12 +112,10 @@ export default function ClientSlider() {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-20 h-20 bg-green-100 rounded-full opacity-20 -translate-x-10 -translate-y-10"></div>
       <div className="absolute bottom-0 right-0 w-32 h-32 bg-green-200 rounded-full opacity-20 translate-x-16 translate-y-16"></div>
 
       <div className="relative mx-auto max-w-4xl">
-        {/* Main slider */}
         <div className="relative h-40 md:h-48 mb-8">
           <div className="absolute inset-0 flex items-center justify-center">
             {clients.map((client, index) => {
@@ -117,7 +149,14 @@ export default function ClientSlider() {
                       alt={client.alt}
                       width={240}
                       height={120}
-                      className="max-h-full max-w-full object-contain"
+                      className={cn(
+                        "max-h-full max-w-full object-contain",
+                        client.name === "Modex" && "scale-250",
+                        client.name === "Mabex" && "scale-125",
+                        (client.name === "Mabex" ||
+                          client.name === "Integra") &&
+                          "bg-gray-800 p-3 rounded-md"
+                      )}
                     />
                   </div>
                 </div>
@@ -126,14 +165,12 @@ export default function ClientSlider() {
           </div>
         </div>
 
-        {/* Client name */}
         <div className="text-center mb-8 h-8">
           <p className="text-lg font-medium text-green-800 transition-all duration-500 transform client-name">
             {clients[currentIndex].name}
           </p>
         </div>
 
-        {/* Navigation buttons */}
         <div className="flex justify-center items-center gap-8 mb-6">
           <Button
             variant="outline"
@@ -144,7 +181,6 @@ export default function ClientSlider() {
             <ChevronLeft className="h-5 w-5 text-green-700" />
           </Button>
 
-          {/* Indicators */}
           <div className="flex justify-center space-x-2">
             {clients.map((_, index) => (
               <button
