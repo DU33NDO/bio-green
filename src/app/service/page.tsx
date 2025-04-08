@@ -108,7 +108,7 @@ export default function WasteRemovalPage() {
                     <p className="flex items-center mt-2">
                       <span className="text-blue-500 mr-2">🔗</span>
                       <a
-                        href="/docs/license.pdf"
+                        href="/documents/license.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-600 hover:text-blue-800 hover:underline font-medium"
