@@ -69,9 +69,9 @@ const clients: Client[] = [
     alt: "G-Park Logo",
   },
   {
-    name: "Bagystan",
-    logo: "/images/clients/Bagystan.png",
-    alt: "Bagystan Logo",
+    name: "Шар-Құрылыс",
+    logo: "/images/clients/kyrylys.png",
+    alt: "Шар-Құрылыс Logo",
   },
 ];
 
@@ -153,6 +153,7 @@ export default function ClientSlider() {
                         "max-h-full max-w-full object-contain",
                         client.name === "Modex" && "scale-250",
                         client.name === "Mabex" && "scale-125",
+                        client.name === "Шар-Құрылыс" && "scale-250",
                         (client.name === "Mabex" ||
                           client.name === "Integra") &&
                           "bg-gray-800 p-3 rounded-md"
