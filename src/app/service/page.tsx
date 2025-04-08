@@ -71,7 +71,9 @@ export default function WasteRemovalPage() {
               </div>
 
               <div className="space-y-4 text-gray-800">
-                <p className="font-medium">{t("service.attention.illegal")}</p>
+                <p className="font-medium text-xl">
+                  {t("service.attention.illegal")}
+                </p>
                 <p>{t("service.attention.legislation")}</p>
                 <p>{t("service.attention.monitoring")}</p>
 
